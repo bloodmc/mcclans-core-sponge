@@ -7,7 +7,7 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 group = 'nl.riebie'
-version = '1.6'
+version = '1.6.1'
 description = 'MCClans allows players to group together by forming clans'
 
 jar.enabled = false
@@ -20,7 +20,7 @@ repositories {
     }
     maven {
         name = 'bstats'
-        url = 'http://repo.bstats.org/content/repositories/releases/'
+        url = 'https://repo.codemc.org/repository/maven-public'
      }
     maven {
         name = 'nucleus'
@@ -30,9 +30,9 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'org.spongepowered:spongeapi:7.1.0-SNAPSHOT'
-    compile "org.bstats:bstats-sponge:1.2"
-    compile 'io.github.nucleuspowered:nucleus-api:1.3.7-S7.0'
+    compile 'org.spongepowered:spongeapi:7.2.0-SNAPSHOT'
+    compile "org.bstats:bstats-sponge:1.4"
+    compile 'io.github.nucleuspowered:nucleus-api:1.9.1-S7.1'
     compile files('libs/MCClans-API-1.4-SNAPSHOT.jar')
 }
 
@@ -40,7 +40,7 @@ shadowJar {
     dependencies {
         include dependency('nl.riebie:mcclans-api')
         include dependency('io.github.nucleuspowered:nucleus-api')
-        include dependency("org.bstats:bstats-sponge:1.2")
+        include dependency("org.bstats:bstats-sponge:1.4")
     }
 
     relocate "org.bstats", "nl.riebie.mcclans.org.bstats"
