@@ -26,21 +26,25 @@ repositories {
         name = 'nucleus'
         url = 'http://repo.drnaylor.co.uk/artifactory/list/minecraft'
     }
+    maven {
+        name = 'jitpack'
+        url = 'https://jitpack.io'
+    }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile 'org.spongepowered:spongeapi:7.2.0-SNAPSHOT'
-    compile "org.bstats:bstats-sponge:1.4"
+    compile 'org.bstats:bstats-sponge:1.4'
     compile 'io.github.nucleuspowered:nucleus-api:1.9.1-S7.1'
-    compile files('libs/MCClans-API-1.4-SNAPSHOT.jar')
+    compile 'com.github.bloodmc:mcclans-api:develop-SNAPSHOT'
 }
 
 shadowJar {
     dependencies {
-        include dependency('nl.riebie:mcclans-api')
+        include dependency('com.github.bloodmc:mcclans-api')
         include dependency('io.github.nucleuspowered:nucleus-api')
-        include dependency("org.bstats:bstats-sponge:1.4")
+        include dependency('org.bstats:bstats-sponge:1.4')
     }
 
     relocate "org.bstats", "nl.riebie.mcclans.org.bstats"
@@ -55,6 +59,7 @@ shadowJar {
     } else {
         archiveName = rootProject.name + '-' + project.version + '-LOCAL' + '.jar'
     }
+    classifier = null
 }
 
 artifacts {
