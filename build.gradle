@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
     maven {
         name = 'sponge'
-        url = 'http://repo.spongepowered.org/maven'
+        url = 'https://repo.spongepowered.org/maven'
     }
     maven {
         name = 'bstats'
@@ -34,7 +34,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'org.spongepowered:spongeapi:7.2.0-SNAPSHOT'
+    compile 'org.spongepowered:spongeapi:7.3.0'
     compile 'org.bstats:bstats-sponge:1.4'
     compile 'io.github.nucleuspowered:nucleus-api:1.9.1-S7.1'
     compile 'com.github.bloodmc:mcclans-api:develop-SNAPSHOT'
